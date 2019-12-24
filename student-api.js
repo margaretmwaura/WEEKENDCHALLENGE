@@ -30,13 +30,20 @@ app.post('/student', (req, res) => {
     // Output the book to the console for debugging
     console.log("This is the data collected : " + firstname + " " + lastname + " " + age);
 
-    var studentex = new Student(firstname,lastname,age);
-    studentex.display();
+    if(lastname && firstname && age)
+    {
+        var studentex = new Student(firstname, lastname, age);
+        studentex.display();
 
-    students.push(studentex);
-    console.log(students);
-    // res.send(' A student has been added');
-    res.sendFile(path.join(__dirname + '/list.html'))
+        students.push(studentex);
+        console.log(students);
+        // res.send(' A student has been added');
+        res.sendFile(path.join(__dirname + '/list.html'))
+    }
+    else
+    {
+        console.log("Enter all the inputs")
+    }
 });
 
 app.get('/list', (req, res) => {

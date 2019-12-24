@@ -1,0 +1,65 @@
+
+describe("append", function() {
+    beforeEach(function() {
+        var dom = `<div id="dom">
+<div id="body" class="grid-frame">
+  <form id="formdata">
+        <div class="grid-container">
+            <div class="grid-y grid-padding-y">
+                <div class="cell medium-12 large-12 small-12">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.."><span id="msgfname"></span>
+                </div>
+                <div class="cell medium-12 large-12 small-12">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.."><span id="msglname"></span>
+                </div>
+                <div class="cell medium-12 large-12 small-12">
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" placeholder="Your last age in words"><span id="msgage"></span>
+                </div>
+                <div class="cell medium-12 large-12 small-12">
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+</div>`;
+
+        document.body.insertAdjacentHTML(
+            'afterbegin',
+            dom);
+    });
+
+    beforeEach(function() {
+        window.actions.init();
+    });
+    it("should have an error message",function ()
+    {
+        window.document.getElementById("formdata").onsubmit;
+        let fname =  window.document.getElementById('fname').value;
+        console.log("The FistName is : " + fname);
+        if(fname === " ")
+        {
+            var text = window.document.getElementById('msgfname').innerHTML;
+            console.log(text);
+            expect(text).toEqual("Write a proper name")
+        }
+
+    });
+    it("an alert should be displayed",function ()
+    {
+        window.document.getElementById("fname").value = "Maggie";
+        spyOn(window, 'alert');
+        window.document.getElementById("formdata").onsubmit;
+        let fname =  window.document.getElementById('fname').value;
+        console.log("The FistName is : " + fname);
+        if(fname === "Maggie")
+        {
+            expect(window.alert)
+        }
+
+    });
+});
