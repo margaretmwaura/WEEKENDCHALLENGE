@@ -36,6 +36,8 @@ describe("append", function() {
     beforeEach(function() {
         window.actions.init();
     });
+
+    //Testing the fname input item
     it("should have an error message",function ()
     {
         window.document.getElementById("formdata").onsubmit;
@@ -45,7 +47,7 @@ describe("append", function() {
         {
             var text = window.document.getElementById('msgfname').innerHTML;
             console.log(text);
-            expect(text).toEqual("Write a proper name")
+            expect(text).toEqual("Write a first proper name")
         }
 
     });
@@ -57,6 +59,63 @@ describe("append", function() {
         let fname =  window.document.getElementById('fname').value;
         console.log("The FistName is : " + fname);
         if(fname === "Maggie")
+        {
+            expect(window.alert)
+        }
+
+    });
+
+    //Testing the lastname input
+    it("should have an error message for no lastname",function ()
+    {
+        window.document.getElementById("formdata").onsubmit;
+        let lname =  window.document.getElementById('lname').value;
+        console.log("The lastname is : " + lname);
+        if(lname === " ")
+        {
+            var text = window.document.getElementById('msglname').innerHTML;
+            console.log(text);
+            expect(text).toEqual("Write a last proper name")
+        }
+
+    });
+    it("an alert should be displayed for lastname",function ()
+    {
+        window.document.getElementById("lname").value = "Wanjiru";
+        spyOn(window, 'alert');
+        window.document.getElementById("formdata").onsubmit;
+        let lname =  window.document.getElementById('lname').value;
+        console.log("The lastname is : " + lname);
+        if(lname === "Wanjiru")
+        {
+            expect(window.alert)
+        }
+
+    });
+
+    //Testing the age input
+
+    it("should have an error message for no age",function ()
+    {
+        window.document.getElementById("formdata").onsubmit;
+        let age =  window.document.getElementById('age').value;
+        console.log("The age is : " + age);
+        if(age === " ")
+        {
+            var text = window.document.getElementById('msgage').innerHTML;
+            console.log(text);
+            expect(text).toEqual("Write a proper age")
+        }
+
+    });
+    it("an alert should be displayed for age",function ()
+    {
+        window.document.getElementById("age").value = "Thrirty";
+        spyOn(window, 'alert');
+        window.document.getElementById("formdata").onsubmit;
+        let age =  window.document.getElementById('age').value;
+        console.log("The age is : " + age);
+        if(lname === "Thrirty")
         {
             expect(window.alert)
         }

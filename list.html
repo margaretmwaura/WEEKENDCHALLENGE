@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/foundation.css">
     <script type="text/javascript" >
         $(document).ready(function(){
             var table = document.getElementById("booksdata");
@@ -31,13 +33,13 @@
                         var tr = document.createElement('TR');
                         var td = document.createElement('TD');
                         td.appendChild(document.createTextNode(fname));
-                        tr.appendChild(td)
+                        tr.appendChild(td);
                         var td = document.createElement('TD');
                         td.appendChild(document.createTextNode(lname));
                         tr.appendChild(td)
                         var td = document.createElement('TD');
                         td.appendChild(document.createTextNode(age));
-                        tr.appendChild(td)
+                        tr.appendChild(td);
                         tableBody.appendChild(tr);
                     }
 
@@ -49,10 +51,14 @@
 </head>
 <body>
 
-<h1> This is the list page </h1>
-<p id="student">Will display the list</p>
 
 
+<div class="grid-frame">
+
+    <div class="grid-container">
+
+        <h6> This is the list page </h6>
+        <p id="student">Will display the list</p>
 <table id="booksdata" border="2">
     <thead>
     <th>Author</th>
@@ -64,6 +70,8 @@
     </tbody>
 </table>
 
+    </div>
+</div>
 </body>
 </html>
 
