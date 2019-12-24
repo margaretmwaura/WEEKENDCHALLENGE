@@ -38,11 +38,14 @@ app.post('/student', (req, res) => {
         students.push(studentex);
         console.log(students);
         // res.send(' A student has been added');
-        res.sendFile(path.join(__dirname + '/list.html'))
+        // res.sendFile(path.join(__dirname + '/list.html'))
+
+        res.redirect('/listfile');
     }
     else
     {
-        console.log("Enter all the inputs")
+        console.log("Enter all the inputs");
+        res.redirect('/listfile');
     }
 });
 

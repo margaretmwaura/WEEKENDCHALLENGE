@@ -1,7 +1,7 @@
 
 describe("scheduletests" , function ()
 {
-    describe("append", function() {
+    describe("form", function() {
         beforeEach(function() {
             var dom = `<div id="dom">
 <div id="body" class="grid-frame">
@@ -150,7 +150,7 @@ describe("scheduletests" , function ()
 
         });
             // Checking the number of rows created
-            it("should have 3 rows",function ()
+            it("should have 4 rows",function ()
             {
                 console.log("The table test has been run");
                 let data = [ { firstname: 'Maggie', lastname: 'Mwaura', age: 'twenty' }, { firstname: 'Maggie', lastname: 'Mwaura', age: 'thirth' },
