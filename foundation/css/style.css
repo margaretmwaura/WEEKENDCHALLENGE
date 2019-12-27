@@ -1,0 +1,13 @@
+#banner {
+  height: 300px;
+  background-color: indianred; }
+  #banner p {
+    color: indigo;
+    font-weight: bolder;
+    font-size: 18px; }
+  #banner h6 {
+    margin-top: 100px;
+    color: white;
+    font-size: 20px; }
+
+/*# sourceMappingURL=style.css.map */

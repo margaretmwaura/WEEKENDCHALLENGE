@@ -16,10 +16,18 @@ describe("scheduletests" , function ()
                     <label for="lname">Last Name</label>
                     <input type="text" id="lname" name="lastname" placeholder="Your last name.."><span id="msglname"></span>
                 </div>
-                <div class="cell medium-12 large-12 small-12">
-                    <label for="age">Age</label>
-                    <input type="text" id="age" name="age" placeholder="Your last age in words"><span id="msgage"></span>
+               <div class="cell medium-12 large-12 small-12">
+                    <label for="ssubject">Subject</label>
+                    <input type="text" id="ssubject" name="ssubject" placeholder="Your subject"><span id="mssubject"></span>
                 </div>
+                <div class="cell medium-12 large-12 small-12">
+                    <label for="sclass">Class</label>
+                    <input type="text" id="sclass" name="sclass" placeholder="Your class "><span id="msclass"></span>
+                </div>
+                <div class="cell medium-12 large-12 small-12">
+                    <label for="stime">Time</label>
+                    <input type="text" id="stime" name="stime" placeholder="Your preffered time"><span id="mstime"></span>
+                </div>    
                 <div class="cell medium-12 large-12 small-12">
                     <input type="submit" value="Submit" id="submit">
                 </div>
@@ -91,28 +99,84 @@ describe("scheduletests" , function ()
             }
 
         });
-        //Testing the age input
-        it("should have an error message for no age",function ()
+        //Testing the subject input
+        it("should have an error message for no subject",function ()
         {
             window.document.getElementById("formdata").onsubmit;
-            let age =  window.document.getElementById('age').value;
-            console.log("The age is : " + age);
-            if(age === " ")
+            let subject =  window.document.getElementById('ssubject').value;
+            console.log("The age is : " + subject);
+            if(subject === " ")
             {
-                var text = window.document.getElementById('msgage').innerHTML;
+                var text = window.document.getElementById('mssubject').innerHTML;
                 console.log(text);
-                expect(text).toEqual("Write a proper age")
+                expect(text).toEqual("Write a proper subject")
             }
 
         });
-        it("an alert should be displayed for age",function ()
+        it("an alert should be displayed for subject",function ()
         {
-            window.document.getElementById("age").value = "Thrirty";
+            window.document.getElementById("ssubject").value = "Maths";
             spyOn(window, 'alert');
             window.document.getElementById("formdata").onsubmit;
-            let age =  window.document.getElementById('age').value;
-            console.log("The age is : " + age);
-            if(lname === "Thrirty")
+            let subject =  window.document.getElementById('ssubject').value;
+            console.log("The age is : " + subject);
+            if(subject === "Maths")
+            {
+                expect(window.alert)
+            }
+
+        });
+
+        //Testing the class input
+        it("should have an error message for no class",function ()
+        {
+            window.document.getElementById("formdata").onsubmit;
+            let sclass =  window.document.getElementById('sclass').value;
+            console.log("The age is : " + sclass);
+            if(sclass === " ")
+            {
+                var text = window.document.getElementById('msclass').innerHTML;
+                console.log(text);
+                expect(text).toEqual("Write a proper class")
+            }
+
+        });
+        it("an alert should be displayed for class",function ()
+        {
+            window.document.getElementById("sclass").value = "Two";
+            spyOn(window, 'alert');
+            window.document.getElementById("formdata").onsubmit;
+            let sclass =  window.document.getElementById('sclass').value;
+            console.log("The age is : " + sclass);
+            if(sclass === "Two")
+            {
+                expect(window.alert)
+            }
+
+        });
+
+        //Testing the time input
+        it("should have an error message for no time",function ()
+        {
+            window.document.getElementById("formdata").onsubmit;
+            let stime =  window.document.getElementById('stime').value;
+            console.log("The time is : " + stime);
+            if(stime === " ")
+            {
+                var text = window.document.getElementById('msclass').innerHTML;
+                console.log(text);
+                expect(text).toEqual("Write a proper time")
+            }
+
+        });
+        it("an alert should be displayed for time",function ()
+        {
+            window.document.getElementById("stime").value = "Two";
+            spyOn(window, 'alert');
+            window.document.getElementById("formdata").onsubmit;
+            let stime =  window.document.getElementById('stime').value;
+            console.log("The time is : " + stime);
+            if(stime === "Two")
             {
                 expect(window.alert)
             }
@@ -127,8 +191,6 @@ describe("scheduletests" , function ()
             var dom = `<div id="dom">
 <div class="grid-frame">
     <div class="grid-container">
-        <h6> This is the list page </h6>
-        <p id="student">Will display the list</p>
 <table id="booksdata" border="2">
     <thead>
     <th>Author</th>
@@ -153,11 +215,22 @@ describe("scheduletests" , function ()
             it("should have 4 rows",function ()
             {
                 console.log("The table test has been run");
-                let data = [ { firstname: 'Maggie', lastname: 'Mwaura', age: 'twenty' }, { firstname: 'Maggie', lastname: 'Mwaura', age: 'thirth' },
-                    { firstname: 'Maggie', lastname: 'Mwaura', age: 'thirth' }
-                ];
+                let data = [{
+                    firstname: 'Maggie',
+                    lastname: 'Mwaura',
+                    subject: 'Maths',
+                    class: 'two',
+                    time: 'four to six' },
+                {
+                firstname: 'Maggie',
+                    lastname: 'Mwaura',
+                    subject: 'Maths',
+                    class: 'two',
+                    time: 'four to six' }]
+
+                ;
                 var num = populate(data);
-                expect(num).toEqual(4);
+                expect(num).toEqual(3);
             });
 
 

@@ -15,19 +15,33 @@
             var  s = res[i];
             var fname = s.firstname;
             var lname = s.lastname;
-            var age =   s.age;
-            console.log("The data broken down : " + fname + " " + lname + " " + age);
+            var subject = s.subject;
+            var cclass = s.class;
+            var time = s.time;
+            console.log("The data broken down : " + fname + " " + lname + " " + subject + " " + cclass + " " + time);
 
             var tr = document.createElement('TR');
+
             var td = document.createElement('TD');
             td.appendChild(document.createTextNode(fname));
             tr.appendChild(td);
+
             var td = document.createElement('TD');
             td.appendChild(document.createTextNode(lname));
-            tr.appendChild(td)
-            var td = document.createElement('TD');
-            td.appendChild(document.createTextNode(age));
             tr.appendChild(td);
+
+            var td = document.createElement('TD');
+            td.appendChild(document.createTextNode(subject));
+            tr.appendChild(td);
+
+            var td = document.createElement('TD');
+            td.appendChild(document.createTextNode(cclass));
+            tr.appendChild(td);
+
+            var td = document.createElement('TD');
+            td.appendChild(document.createTextNode(time));
+            tr.appendChild(td);
+
             tableBody.appendChild(tr);
         }
 

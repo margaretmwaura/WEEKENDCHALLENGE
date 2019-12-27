@@ -1,4 +1,4 @@
-var Student = require('./student.js');
+var Schedule = require('./schedule.js');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -26,13 +26,16 @@ app.post('/student', (req, res) => {
     const studentdata = req.body;
     const firstname = studentdata.firstname;
     const lastname = studentdata.lastname;
-    const age = studentdata.age;
-    // Output the book to the console for debugging
-    console.log("This is the data collected : " + firstname + " " + lastname + " " + age);
+    const subject = studentdata.ssubject;
+    const cclass = studentdata.sclass;
+    const stime = studentdata.stime;
 
-    if(lastname && firstname && age)
+    // Output the book to the console for debugging
+    console.log("This is the data collected : " + firstname + " " + lastname + " " + subject + " " + cclass + " " + stime);
+
+    if(lastname && firstname && subject && cclass && stime)
     {
-        var studentex = new Student(firstname, lastname, age);
+        var studentex = new Schedule(firstname, lastname, subject , cclass, stime);
         studentex.display();
 
         students.push(studentex);
@@ -45,7 +48,7 @@ app.post('/student', (req, res) => {
     else
     {
         console.log("Enter all the inputs");
-        res.redirect('/listfile');
+
     }
 });
 

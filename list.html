@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/foundation.css">
     <script src="js/actions/populatetable.js"></script>
@@ -16,7 +17,7 @@
                 url: 'http://localhost:4000/list',
                 dataType: "json",
                 success: function(res) {
-                    console.log(res);
+                    console.log("This is the data ma people " + res);
                     populate(res);
                 }
 
@@ -25,20 +26,31 @@
     </script>
 </head>
 <body>
+<div id="banner" class="grid-container">
+    <div class="grid-x grid-margin-x">
 
+        <div class="cell large-3 medium-3 small-3"></div>
+        <div class="cell large-6 medium-6 small-6">
+            <h6> This is the teachers schedule</h6>
+            <p> This schedule will enable the school to organize the students into proper classes
+                , ensuring that no student is loittering in school , that every student is productive and properly
+                utilizinf their time</p>
+        </div>
+        <div class="cell large-3 medium-3 small-3"></div>
+    </div>
+</div>
 
 
 <div class="grid-frame">
 
     <div class="grid-container">
-
-        <h6> This is the list page </h6>
-        <p id="student">Will display the list</p>
 <table id="booksdata" border="2">
     <thead>
-    <th>Author</th>
-    <th>Country</th>
-    <th>language</th>
+    <th>First Name</th>
+    <th>Last name</th>
+    <th>Subject</th>
+    <th>Class</th>
+    <th>Time</th>
     </thead>
     <tbody>
 

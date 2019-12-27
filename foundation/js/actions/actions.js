@@ -9,7 +9,7 @@ window.actions = window.actions || {};
        if(fname)
        {
            console.log("The firstname is not null");
-           alert(fname);
+           alert( "This is the first name entered " + fname);
        }
        else
        {
@@ -21,7 +21,7 @@ window.actions = window.actions || {};
         if(lname)
         {
             console.log("The lastname is not null");
-            alert(lname);
+            alert("This is the last name entered " + lname);
         }
         else
         {
@@ -29,16 +29,40 @@ window.actions = window.actions || {};
         }
 
 
-        let age =  window.document.getElementById('age').value;
-        console.log("The age is : " + age);
-        if(age)
+        let subject =  window.document.getElementById('ssubject').value;
+        console.log("The subject is : " + subject);
+        if(subject)
         {
             console.log("The age is not null");
-            alert(age);
+            alert("This is the subject entered " + subject);
         }
         else
         {
-            window.document.getElementById('msgage').innerHTML = "Write a proper age";
+            window.document.getElementById('mssubject').innerHTML = "Write a proper subject";
+        }
+
+        let sclass =  window.document.getElementById('sclass').value;
+        console.log("The class is : " + sclass);
+        if(sclass)
+        {
+            console.log("The age is not null");
+            alert("This is the class entered " + sclass);
+        }
+        else
+        {
+            window.document.getElementById('msclass').innerHTML = "Write a proper class";
+        }
+
+        let stime =  window.document.getElementById('stime').value;
+        console.log("The time is : " + stime);
+        if(stime)
+        {
+            console.log("The age is not null");
+            alert("This is the time entered is " + stime);
+        }
+        else
+        {
+            window.document.getElementById('mstime').innerHTML = "Write a proper time";
         }
 
     };
